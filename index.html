@@ -13,8 +13,10 @@
   </head>
 
   <body>
-    <div class="preloader"></div>
-    <div class="txt-preloader">Preparing Your Content</div>
+    <div class="preloader-container">
+      <div class="spinner"></div>
+      <p>Preparing Your Content</p>
+    </div>
     <div style="display: none" class="container">
       <div class="card animate-bottom">
         <div class="card-header">
@@ -58,19 +60,20 @@
       const simulation = (action, ms) => setTimeout(action, ms);
 
       const showPreLoader = () => {
-        document.querySelector('.preloader').style.display = 'none';
-        document.querySelector('.txt-preloader').style.display = 'none';
+        document.querySelector('.preloader-container').style.display = 'none';
         document.querySelector('.container').style.display = 'flex';
       };
 
-      const form = document.querySelector('.form-submit');
-      form.addEventListener('submit', (e) => {
+      document.querySelector('.form-submit').addEventListener('submit', (e) => {
         e.preventDefault();
         document.querySelector('.btn-submit').classList.add('disabled');
-        document.querySelector('.btn-submit span').innerHTML = 'Loading';
+        document.querySelector('.btn-submit span').innerHTML = 'Loading...';
         document.querySelector('.loader-submit').style.display = 'block';
         simulation(() => {
-          window.location.reload();
+          alert('Registration Success');
+          document.querySelector('.btn-submit').classList.remove('disabled');
+          document.querySelector('.btn-submit span').innerHTML = 'Submit';
+          document.querySelector('.loader-submit').style.display = 'none';
         }, 2000);
       });
 

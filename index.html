@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Signika&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/style.css" />
+    <title>Demo Loading Animation</title>
+  </head>
+
+  <body>
+    <div class="preloader"></div>
+    <div class="txt-preloader">Preparing Your Content</div>
+    <div style="display: none" class="container">
+      <div class="card animate-bottom">
+        <div class="card-header">
+          <h1>Registration Form</h1>
+        </div>
+        <div class="card-body">
+          <form class="form-submit">
+            <div class="form-group">
+              <label>Username</label>
+              <br />
+              <input type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label>Password</label>
+              <br />
+              <input type="password" class="form-control" />
+            </div>
+            <button type="submit" class="btn-submit">
+              <div style="display: none" class="loader-submit">
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+              <span>Submit</span>
+            </button>
+          </form>
+        </div>
+        <div class="card-footer">
+          <div class="logo skilvul">
+            <img src="assets/images/skilvul.png" alt="" />
+          </div>
+          <span>x</span>
+          <div class="logo garena">
+            <img src="assets/images/garena.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="" async defer></script>
+    <script>
+      const simulation = (action, ms) => setTimeout(action, ms);
+
+      const showPreLoader = () => {
+        document.querySelector('.preloader').style.display = 'none';
+        document.querySelector('.txt-preloader').style.display = 'none';
+        document.querySelector('.container').style.display = 'flex';
+      };
+
+      const form = document.querySelector('.form-submit');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        document.querySelector('.btn-submit').classList.add('disabled');
+        document.querySelector('.btn-submit span').innerHTML = 'Loading';
+        document.querySelector('.loader-submit').style.display = 'block';
+        simulation(() => {
+          window.location.reload();
+        }, 2000);
+      });
+
+      simulation(() => {
+        showPreLoader();
+      }, 2000);
+    </script>
+  </body>
+</html>

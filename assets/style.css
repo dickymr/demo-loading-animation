@@ -1,0 +1,199 @@
+*, ::after, ::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+} 
+
+/* Preloader */
+.preloader {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #8B0724;
+  margin: -75px 0px 0 -40px;
+  animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.txt-preloader {
+  position: absolute;
+  top: 52.5%;
+  left: 0%;
+  right: 0%;
+  text-align: center;
+  font-family: 'Signika', sans-serif;
+  color: #5d5d5d;
+}
+
+/* Loader Submit */
+.loader-submit {
+  width: 30px;
+  height: 30px;
+  display: block;
+  position: relative;
+}
+
+.loader-submit div {
+  display: block;
+  position: absolute;
+  left: 5px;
+  width: 5px;
+  background: #fefefe;
+  animation: loader-submit 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.loader-submit div:nth-child(1) {
+  left: 0px;
+  animation-delay: -0.24s;
+}
+
+.loader-submit div:nth-child(2) {
+  left: 8px;
+  animation-delay: -0.12s;
+}
+
+.loader-submit div:nth-child(3) {
+  left: 16px;
+  animation-delay: 0;
+}
+
+@keyframes loader-submit {
+  0% {
+    top: 0px;
+    height: 10px;
+  }
+  50%, 100% {
+    top: 7.5px;
+    height: 15px;
+  }
+}
+
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #660218;
+  font-family: 'Signika', sans-serif;
+  overflow: hidden;
+}
+
+.card {
+  width: 400px;
+  height: 450px;
+  background: #fefefe;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 #00000033;
+  padding: 5px 20px;
+}
+
+.card-header {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  color: #FF0000;
+}
+
+.card-body {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #afafaf;
+  border-bottom: 1px solid #afafaf;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 3%;
+  color: #4A4B4C;
+}
+
+.form-control {
+  width: 340px;
+  height: 35px;
+  font-family: 'Signika', sans-serif;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #afafaf ;
+  padding: 0px 10px;
+  margin-top: 2px;
+}
+
+.form-control:focus {
+  outline: none;
+  border: 1px solid #ff0000
+}
+
+.btn-submit {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #ff0000;
+  font-family: 'Signika', sans-serif;
+  font-size: 16px;
+  color: #fefefe;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  margin-top: 25px;
+  outline: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-submit.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.card-footer {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 35%;
+}
+
+
+.logo img {
+  height: 100%;
+}
+
+.card-footer span {
+  margin: 0 2.5%;
+}
+
+ /* Add animation to "page content" */
+.animate-bottom {
+  position: relative;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@keyframes animatebottom { 
+  from{ bottom:-100px; opacity:0 } 
+  to{ bottom:0; opacity:1 }
+}

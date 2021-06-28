@@ -59,7 +59,7 @@
     <script>
       const simulation = (action, ms) => setTimeout(action, ms);
 
-      const showPreLoader = () => {
+      const hidePreLoader = () => {
         document.querySelector('.preloader-container').style.display = 'none';
         document.querySelector('.container').style.display = 'flex';
       };
@@ -78,7 +78,7 @@
       });
 
       simulation(() => {
-        showPreLoader();
+        hidePreLoader();
       }, 2000);
     </script>
   </body>
